@@ -26,7 +26,7 @@ gender – Customer gender
 
 
 
-🛠 Tech Stack
+***🛠 Tech Stack***
 
 Database: Microsoft SQL Server
 
