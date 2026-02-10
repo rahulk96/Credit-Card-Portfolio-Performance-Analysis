@@ -1,5 +1,8 @@
 # Credit-Card-Transactions-Project
 
+End-to-end credit card analytics solution using SQL Server and Power BI, from raw CSV ingestion to executive dashboards.
+
+
 Dataset Link- https://www.kaggle.com/datasets/thedevastator/analyzing-credit-card-spending-habits-in-india  
 
 
