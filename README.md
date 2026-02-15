@@ -1,76 +1,40 @@
-# Credit-Card-Transactions-Project
+💳 Credit Card Portfolio Performance & Growth Analysis
+(SQL Server + Power BI End-to-End Analytics Project)
 
-End-to-end credit card analytics solution using SQL Server and Power BI, from raw CSV ingestion to executive dashboards.
+📊 Project Overview
 
+This project is an end-to-end credit card analytics solution built using Microsoft SQL Server and Power BI, starting from raw CSV ingestion to a structured 4-page interactive Power BI analytical report.
 
-Dataset Link- https://www.kaggle.com/datasets/thedevastator/analyzing-credit-card-spending-habits-in-india  
+The objective was to simulate a real-world banking analytics scenario by designing a reporting solution that supports:
 
+Executive performance monitoring
 
-The dataset consists of credit card transaction–level data, where each record represents a single transaction.
+Product portfolio evaluation
 
-Key attributes include:
+Market and customer behavior analysis
 
-transaction_id – Unique identifier for each transaction (Primary Key)
+Time-based growth intelligence
 
-transaction_date – Date of transaction
+The project demonstrates the integration of SQL-based analytics with business-focused visualization in Power BI.
 
-city – City where the transaction occurred
+📥 Dataset
 
-card_type – Type of credit card (e.g., Gold, Silver, Platinum, Signature)
+Source: Kaggle
+https://www.kaggle.com/datasets/thedevastator/analyzing-credit-card-spending-habits-in-india
 
-exp_type – Expense category (e.g., Fuel, Travel, Shopping)
+The dataset consists of transaction-level credit card data where each row represents a single transaction.
 
-amount – Transaction amount
+Key Attributes
 
-gender – Customer gender
-
-
-
-**🛠 Tech Stack**
-
-Database: Microsoft SQL Server
-
-Visualization: Power BI
-
-Data Ingestion: Bulk Insert (CSV → SQL Server)
-
-Version Control & Documentation: GitHub
-
-
--------------------------------------------------------
-
-📊 Credit Card Transactions Analytics (SQL Server + Power BI)
-📌 Business Problem
-
-Credit card companies generate millions of transactions across cities, card types, and customer segments.
-However, without structured analytics, it becomes difficult to answer key business questions such as:
-
-Which cities and markets drive the most revenue?
-
-Which card types contribute the highest spend?
-
-How does customer spending behavior vary by gender and expense category?
-
-Are transactions growing consistently over time, or are there signs of slowdown?
-
-Objective:
-To analyze credit card transaction data and uncover spending patterns across cities, card types, and customer segments, enabling stakeholders to identify high-value markets, optimize card offerings, and support data-driven strategic decisions.
-
-🗂 Dataset Overview
-
-The dataset consists of credit card transaction–level data, where each record represents a single transaction.
-
-Key attributes include:
-
-transaction_id – Unique identifier for each transaction (Primary Key)
+transaction_id – Unique identifier (Primary Key)
 
 transaction_date – Date of transaction
 
-city – City where the transaction occurred
+city – Transaction location
 
-card_type – Type of credit card (e.g., Gold, Silver, Platinum, Signature)
+card_type – Card category (Gold, Silver, Platinum, Signature)
 
-exp_type – Expense category (e.g., Fuel, Travel, Shopping)
+exp_type – Expense category
 
 amount – Transaction amount
 
@@ -79,96 +43,193 @@ gender – Customer gender
 Grain: One row per transaction
 Time Coverage: Multi-year transactional history
 
-🛠 Tech Stack
+🗄️ SQL Layer (Data Ingestion & Analytics)
+📥 Data Ingestion
 
-Database: Microsoft SQL Server
+CSV dataset imported directly into SQL Server using Bulk Insert
 
-Data Modeling & Analytics: SQL (CTEs, Window Functions, Views)
+Data validation and null checks performed
 
-Visualization: Power BI
+Primary key constraint enforced on transaction_id
 
-Data Ingestion: Bulk Insert (CSV → SQL Server)
+Cleaned transaction table structured at transaction-level granularity
 
-Version Control & Documentation: GitHub
+🏗 SQL Analytics & Business Logic
 
-🏗 Analytics Architecture
+Business logic and performance calculations were implemented in SQL using:
 
-The project follows a layered analytics architecture, similar to real-world analytics teams.
+KPI aggregations (Total Spend, Total Transactions)
 
-1️⃣ Raw & Clean Layer (SQL Server)
-
-Raw data ingested into staging tables
-
-Data validation, null checks, and primary key enforcement
-
-Cleaned fact table created for analytics
-
-2️⃣ Analytics Layer (SQL Views)
-
-All business logic is centralized in SQL views, including:
-
-KPI summaries
-
-Monthly performance metrics
+Monthly performance analysis
 
 City-wise spend contribution
 
-Card type and gender segmentation
+Card type segmentation
 
-Ranking and growth metrics (MoM)
+Gender-based segmentation
 
-This ensures:
+Ranking logic using window functions
 
-Reusability across reports
+Month-over-Month (MoM) growth calculations
 
-Consistent metric definitions
+Advanced analytical queries using CTEs and partition functions
 
-Better performance in Power BI
+All core metrics were validated in SQL before being consumed in Power BI.
 
-3️⃣ Visualization Layer (Power BI)
+📊 Power BI Visualization Layer
 
-Power BI connects only to analytics views
+SQL Server was connected to Power BI using Import Mode.
 
-Minimal DAX used for dynamic, filter-aware KPIs
+A structured 4-page analytical report was developed to enable interactive and business-focused insights.
 
-Interactive dashboards built for business users
+🏗 Report Structure (4 Pages)
+1️⃣ Executive Performance Overview
 
-📈 Key Insights
+Total Spend
 
-Some of the key insights derived from the analysis include:
+Total Transactions
+
+Average Transaction Value
+
+Month-over-Month (MoM) Growth %
+
+Monthly Spend Trend
+
+Drill-through to detailed growth analysis
+
+Purpose:
+Provides a high-level snapshot of overall credit card business performance.
+
+2️⃣ Market & Transaction Analysis
+
+Dynamic Top N Cities (Parameter Driven)
+
+Daily Transaction Value vs Monthly Benchmark
+
+Conditional formatting (Above/Below Average logic)
+
+Spend Distribution by Gender
+
+Purpose:
+Identifies geographic revenue concentration, daily volatility, and behavioral patterns.
+
+3️⃣ Card Portfolio Analysis
+
+Total Spend by Card Type
+
+Average Transaction Value by Card Type
+
+Dynamic multi-selection title using CONCATENATEX()
+
+Purpose:
+Evaluates product positioning (premium vs mass usage) and portfolio contribution.
+
+4️⃣ Growth Deep Dive (Drill-Through Page)
+
+MoM Growth Table
+
+YoY Growth Trend
+
+Running Total (Cumulative Revenue)
+
+Rolling 3-Month Performance
+
+Purpose:
+Enables root cause analysis of growth fluctuations and long-term trend validation.
+
+🔍 Key Insights
 
 A small number of cities contribute a disproportionately large share of total credit card spend.
 
-Premium card types (e.g., Platinum, Signature) show higher average transaction values, even with fewer transactions.
+Premium card types (e.g., Platinum, Signature) show higher average transaction values despite lower transaction volumes.
 
-Certain expense categories dominate spending consistently across cities.
-
-Clear monthly spending trends reveal periods of growth and slowdown.
+Certain expense categories consistently dominate spending patterns.
 
 Gender-based segmentation highlights differences in spending behavior and transaction frequency.
 
-📊 Power BI Dashboard
+Rolling metrics smooth short-term volatility and reveal underlying growth momentum.
 
-The Power BI dashboard is designed for executive and business users, focusing on clarity and decision-making.
+🧠 Key DAX Concepts Used
 
-Dashboard pages include:
+Context transition using CALCULATE()
 
-Executive Summary: Total spend, transactions, and average ticket size
+Time intelligence with SAMEPERIODLASTYEAR() and DATESINPERIOD()
 
-Time Analysis: Monthly trends and growth patterns
+Iterators such as AVERAGEX()
 
-Geographical Analysis: City-wise and market contribution
+Ranking using RANKX()
 
-Card & Customer Segmentation: Card type and gender insights
+Filter context manipulation with ALL() and ALLSELECTED()
 
-📷 Dashboard screenshots can be found in the /dashboard_screenshots folder.
+Dynamic selections using SELECTEDVALUE()
 
-🚀 Project Highlights
+Multi-value dynamic titles using CONCATENATEX()
 
-End-to-end analytics project from raw CSV to executive dashboard
+Conditional formatting using dynamic color measures
 
-Strong separation of SQL analytics logic and Power BI visualization
+🏛 Data Modeling Approach
 
-Advanced SQL techniques (CTEs, window functions, rankings, growth metrics)
+Custom Date Table (Marked as Date Table)
 
-Realistic business framing suitable for interviews and portfolios
+One-to-Many Relationship (Calendar → Transactions)
+
+Separate Measures Table for organized DAX logic
+
+Star Schema Modeling
+
+Parameter Table for Dynamic Top N Analysis
+
+🛠 Tools & Technologies
+
+Microsoft SQL Server
+
+Power BI Desktop
+
+DAX
+
+Power Query
+
+CSV Dataset
+
+
+GitHub
+/Credit-Card-Portfolio-Performance-Analysis
+│
+├── Credit_Card_Portfolio_Analysis.pbix
+├── credit_card_transactions.csv
+│
+├── Report_Screenshots/
+│   ├── 01_Power_Query.png
+│   ├── 02_Calendar_Table.png
+│   ├── 03_Relationships.png
+│   ├── 04_Data_Modeling.png
+│   ├── 05_Measures_Table.png
+│   ├── 06_Mark_Date_Table.png
+│   ├── 07_Executive_Performance_Overview.png
+│   ├── 08_Market_Transaction_Analysis.png
+│   ├── 09_Card_Portfolio_Analysis.png
+│   └── 10_Growth_Deep_Dive_Drill_Through.png
+│
+└── README.md
+
+
+
+🎯 Business Value
+
+This project demonstrates how structured SQL modeling combined with a multi-page Power BI report can transform raw transaction data into actionable insights for:
+
+Executive performance tracking
+
+Product portfolio optimization
+
+Geographic revenue analysis
+
+Customer segmentation insights
+
+Growth trend evaluation
+
+👤 Author
+
+Rahul Khare
+Business & Data Analyst
+SQL | Power BI | DAX | Business Intelligence
