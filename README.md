@@ -231,5 +231,4 @@ Growth trend evaluation
 👤 Author
 
 Rahul Khare
-Business & Data Analyst
-SQL | Power BI | DAX | Business Intelligence
+
