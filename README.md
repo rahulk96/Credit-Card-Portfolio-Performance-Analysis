@@ -171,28 +171,28 @@ Enables root cause analysis of growth fluctuations and long-term trend validatio
 
 ---
 
-# 📁 Repository Structure
+## 📁 Repository Structure
 
-```text
-Credit-Card-Portfolio-Performance-Analysis/
-│
-├── Credit_Card_Portfolio_Analysis.pbix
-├── credit_card_transactions.csv
-│
-├── Report_Screenshots/
-│   ├── 01_Power_Query.png
-│   ├── 02_Calendar_Table.png
-│   ├── 03_Relationships.png
-│   ├── 04_Data_Modeling.png
-│   ├── 05_Measures_Table.png
-│   ├── 06_Mark_Date_Table.png
-│   ├── 07_Executive_Performance_Overview.png
-│   ├── 08_Market_Transaction_Analysis.png
-│   ├── 09_Card_Portfolio_Analysis.png
-│   └── 10_Growth_Deep_Dive_Drill_Through.png
-│
-└── README.md
----
+- **Credit_Card_Portfolio_Analysis.pbix**  
+  4-page Power BI analytical report.
+
+- **credit_card_transactions.csv**  
+  Raw dataset downloaded from Kaggle.
+
+- **Report_Screenshots/**  
+  Contains project screenshots including:
+  - Power Query data preparation  
+  - Calendar table creation  
+  - Data model & relationships  
+  - Measures table setup  
+  - Executive Performance Overview page  
+  - Market & Transaction Analysis page  
+  - Card Portfolio Analysis page  
+  - Growth Deep Dive (Drill-Through) page  
+
+- **README.md**  
+  Project documentation.
+
 
 # 🎯 Business Value
 
